@@ -1,0 +1,39 @@
+<div >
+    <div >
+        <div >
+            <form>
+                <fieldset>
+                    <legend class="text-center">Please login to access dashboard <span class="req"><small>
+                                required *</small></span></legend>
+
+                    <div class="form-group">
+                        <label for="email"><span class="req">* </span> Email: </label>
+                        <input class="form-control m-2 w-50" type="text" [(ngModel)]="email" name="email" id="email" required ngModel #e="ngModel"
+                            placeholder="Enter valid email address" />
+                            <p class="err-msg" *ngIf="e.touched&&e.errors?.['required']">Email is required</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span> Password : </label>
+                        <input class="form-control m-2 w-50" type="password" [(ngModel)]="password" name="password" id="password" ngModel #p="ngModel"
+                            placeholder="Enter your password" required  />
+                            <p class="err-msg" *ngIf="p.touched&&p.errors?.['required']">Password is required</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Login" (click)="login()">
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+
+<!-- <div *ngIf="message">
+    <h4>{{message}}</h4>
+</div> -->
+
+
+  

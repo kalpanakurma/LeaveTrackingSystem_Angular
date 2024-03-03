@@ -1,0 +1,44 @@
+<h2 style="text-align: center;">Welcome to dashboard</h2>
+<ul>
+    <li>
+        <a routerLink="/maxleaves" routerLinkActive="active">MaxleavesSettings</a>  <!-- We use routerLink instead of href to prevent our page from refresh  -->
+    </li>
+    <li>
+        <a routerLink="/employeewise" routerLinkActive="active">EmployeeWiseLeaves</a>
+    </li>
+    <li>
+        <a routerLink="/datewise" routerLinkActive="active">DateWiseLeaves</a>
+    </li>
+    <li>
+        <a class="logout" routerLink="/logout" routerLinkActive="active">Logout</a>
+    </li>
+</ul>
+<div class="container">
+    <h2>Maxleaves Information</h2>
+    <table class="table table-stripped"></table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Leave_type</th>
+            <th>Max_leaves</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{leaves[0].id}}</td>
+            <td>{{leaves[0].leavetype}}</td>
+            <td> <input required type="text" [(ngModel)]="inp1" name="casual" id="name" ngModel #c="ngModel"></td>
+        </tr>
+        <tr>
+            <td>{{leaves[1].id}}</td>
+            <td>{{leaves[1].leavetype}}</td>
+            <td> <input required type="text" [(ngModel)]="inp2" name="sick" id="name" ngModel #s="ngModel"></td>
+        </tr>
+        <tr>
+            <td>{{leaves[2].id}}</td>
+            <td>{{leaves[2].leavetype}}</td>
+            <td> <input required type="text" [(ngModel)]="inp3" name="earned" id="name" ngModel #e="ngModel"></td>
+        </tr>
+    </tbody>
+</div>
+<button class="btn btn-success" style="margin-left: 310px; margin-top: 4px;" (click)="save()">Save</button>

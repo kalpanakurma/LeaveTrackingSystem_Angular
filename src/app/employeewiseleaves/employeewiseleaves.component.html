@@ -1,0 +1,40 @@
+<h2 style="text-align: center;">Welcome to dashboard</h2>
+<ul>
+    <li>
+        <a routerLink="/maxleaves" routerLinkActive="active">MaxleavesSettings</a>  <!-- We use routerLink instead of href to prevent our page from refresh  -->
+    </li>
+    <li>
+        <a routerLink="/employeewise" routerLinkActive="active">EmployeeWiseLeaves</a>
+    </li>
+    <li>
+        <a routerLink="/datewise" routerLinkActive="active">DateWiseLeaves</a>
+    </li>
+    <li>
+        <a class="logout" routerLink="/logout" routerLinkActive="active">Logout</a>
+    </li>
+</ul>
+
+<div class="container">
+    <h2>Maxleaves Information</h2>
+    <table class="table table-stripped"></table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>No.Of leaves Approved</th>
+            <th>No.Of leaves Rejected</th>
+            <th>No.Of leaves Pending</th>
+            <th>No.Of leaves Remaining</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let leave of leaves">
+            <td>{{leave.serial_no}}</td>
+            <td>{{leave.name}}</td>
+            <td>{{leave.leavesApproved}}</td>
+            <td>{{leave.leavesPending}}</td>
+            <td>{{leave.leavesRejected}}</td>
+            <td>{{leave.leavesRemaining}}</td>
+        </tr>
+    </tbody>
+</div>

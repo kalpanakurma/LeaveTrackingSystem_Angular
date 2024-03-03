@@ -1,0 +1,51 @@
+<h2 style="text-align: center;">Welcome to dashboard</h2>
+<ul>
+    <li>
+        <a routerLink="/maxleaves" routerLinkActive="active">MaxleavesSettings</a>  <!-- We use routerLink instead of href to prevent our page from refresh  -->
+    </li>
+    <li>
+        <a routerLink="/employeewise" routerLinkActive="active">EmployeeWiseLeaves</a>
+    </li>
+    <li>
+        <a routerLink="/datewise" routerLinkActive="active">DateWiseLeaves</a>
+    </li>
+    <li>
+        <a class="logout" routerLink="/logout" routerLinkActive="active">Logout</a>
+    </li>
+</ul>
+
+<div >
+    <label for="name"><span class="req">* </span> Start Date: </label>
+    <input required type="date" [(ngModel)]="date1" name="name" id="name" ngModel #n="ngModel">
+</div>
+
+<div >
+    <label for="email"><span class="req">* </span> End Date: </label>
+    <input type="date" [(ngModel)]="date2" name="email" id="email" required ngModel #e="ngModel">
+</div>
+<button class="btn btn-success"  (click)="get()">Get</button>
+
+<div class="container">
+    <h2>Maxleaves Information</h2>
+    <table class="table table-stripped"></table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>No.Of leaves Approved</th>
+            <th>No.Of leaves Rejected</th>
+            <th>No.Of leaves Pending</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let leave of leaves">
+            <td>{{leave.serialNo}}</td>
+            <td>{{leave.name}}</td>
+            <td>{{leave.leavesApproved}}</td>
+            <td>{{leave.leavesPending}}</td>
+            <td>{{leave.leavesRejected}}</td>
+         
+        </tr>
+    </tbody>
+</div>
